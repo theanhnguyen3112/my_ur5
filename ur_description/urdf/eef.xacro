@@ -1,12 +1,25 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="robotiq_gripper">
-    <!-- parameters -->
-    <!--xacro:arg name="use_fake_hardware" default="true" /-->
 
-    <!-- Import macros -->
-    <xacro:include filename="$(find robotiq_description)/urdf/robotiq_2f_85_macro.urdf.xacro" />
+    <xacro:include filename="$(find ur_description)/urdf/robotiq_2f_85_macro.urdf.xacro" />
 
-    <xacro:robotiq_gripper name="RobotiqGripperHardwareInterface" prefix="" parent="tool0" ><!--use_fake_hardware="$(arg use_fake_hardware)"-->
+    <xacro:robotiq_gripper name="RobotiqGripperHardwareInterface" prefix="" parent="tool0" >
         <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:robotiq_gripper>
 </robot>
+
+<!--robot name="robotiq_85_gripper" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find ur_description)/urdf/robotiq_85_gripper.urdf.xacro" />
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"> 
+            <robotNamespace>/robotiq_gripper</robotNamespace>
+        </plugin> 
+    </gazebo>
+    
+    <xacro:robotiq_85_gripper prefix="" parent="tool0" origin_xyz="0 0 0" origin_rpy="0 0 0" >
+    </xacro:robotiq_85_gripper>
+
+
+    
+</robot-->
