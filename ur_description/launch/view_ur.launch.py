@@ -34,6 +34,11 @@ from launch.substitutions import Command, FindExecutable, LaunchConfiguration, P
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.actions import (
+    IncludeLaunchDescription,
+)
+
 
 def generate_launch_description():
     declared_arguments = []
@@ -43,6 +48,7 @@ def generate_launch_description():
             "ur_type",
             description="Type/series of used UR robot.",
             choices=["ur3", "ur3e", "ur5", "ur5e", "ur10", "ur10e", "ur16e", "ur20", "ur30"],
+            default_value="ur5",
         )
     )
     declared_arguments.append(
