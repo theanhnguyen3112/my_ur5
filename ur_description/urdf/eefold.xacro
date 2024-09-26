@@ -2,10 +2,16 @@
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="robotiq_gripper">
 
     <xacro:include filename="$(find ur_description)/urdf/robotiq_2f_85_macro.urdf.xacro" />
+    
 
     <xacro:robotiq_gripper name="RobotiqGripperHardwareInterface" prefix="" parent="tool0" >
         <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:robotiq_gripper>
+    
+    <!--xacro:include filename="$(find robotiq_description)/urdf/robotiq_85_gripper.urdf.xacro" />
+    <xacro:robotiq_85_gripper prefix="" parent="tool0" >
+        <origin xyz="0 0 0" rpy="0 -1.507 3.14" />
+    </xacro:robotiq_85_gripper-->
 
     <!-- Equivalent to the OpenRAVE manipulator denso_robotiq_85_gripper -->
     <link name="ee_link" />
